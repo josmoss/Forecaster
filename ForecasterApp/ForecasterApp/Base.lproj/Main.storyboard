@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FJ3-BG-zKb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Cities Table View Controller-->
+        <scene sceneID="yWl-Jk-SGg">
+            <objects>
+                <tableViewController id="7N0-8O-y1h" customClass="CitiesTableViewController" customModule="ForecasterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" id="4RG-CR-pzD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="67" id="CiF-Te-Z12" customClass="CitiesTableViewCell" customModule="ForecasterApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CiF-Te-Z12" id="rUj-9O-RC2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-Sj-gbO">
+                                            <rect key="frame" x="2" y="2" width="596" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltm-gy-H3U">
+                                            <rect key="frame" x="2" y="31" width="596" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="ltm-gy-H3U" secondAttribute="trailing" constant="2" id="BzB-MM-L4F"/>
+                                        <constraint firstItem="9q8-Sj-gbO" firstAttribute="leading" secondItem="rUj-9O-RC2" secondAttribute="leading" constant="2" id="Phj-bf-hM6"/>
+                                        <constraint firstItem="ltm-gy-H3U" firstAttribute="leading" secondItem="rUj-9O-RC2" secondAttribute="leading" constant="2" id="lnD-f1-2zp"/>
+                                        <constraint firstItem="ltm-gy-H3U" firstAttribute="top" secondItem="9q8-Sj-gbO" secondAttribute="bottom" constant="8" id="rYu-SZ-lJg"/>
+                                        <constraint firstItem="9q8-Sj-gbO" firstAttribute="top" secondItem="rUj-9O-RC2" secondAttribute="top" constant="2" id="tPL-wH-jeB"/>
+                                        <constraint firstAttribute="trailing" secondItem="9q8-Sj-gbO" secondAttribute="trailing" constant="2" id="z3m-dK-2qn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="9q8-Sj-gbO" id="ap5-9B-ld3"/>
+                                    <outlet property="zipLabel" destination="ltm-gy-H3U" id="tEn-m1-m9U"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7N0-8O-y1h" id="D08-7F-ajR"/>
+                            <outlet property="delegate" destination="7N0-8O-y1h" id="zg5-Bd-edc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="AQa-Sf-LrX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BYB-Ob-GLL">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="7N0-8O-y1h" id="U00-Yc-jRh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lH9-rK-0Rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="239"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zrb-7g-EeO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FJ3-BG-zKb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gaq-8V-zpo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7N0-8O-y1h" kind="relationship" relationship="rootViewController" id="ZPS-m1-lCG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUo-Av-m8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="239"/>
+        </scene>
+    </scenes>
+</document>
