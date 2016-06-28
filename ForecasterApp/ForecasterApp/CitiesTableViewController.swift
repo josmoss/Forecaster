@@ -45,6 +45,9 @@ class CitiesTableViewController: UITableViewController {
             self.geocoding(self.zipCode, completion: {(latitude, longitude) in
             
             
+                
+                
+                
             })
             
         })
