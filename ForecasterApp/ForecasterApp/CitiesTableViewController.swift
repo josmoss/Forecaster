@@ -12,61 +12,101 @@ import CoreLocation
 class CitiesTableViewController: UITableViewController {
 
     var citiesArray = [City]()
-    var cityName: String = ""
-    var zipCode: String = ""
+    var currentCity : City?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     @IBAction func addButtonTapped(sender: UIBarButtonItem) {
-        // Create AlertController
-        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
-        // Create the Save Action with textfields
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: {
-            alert -> Void in
+            // Create an instance of the UIAlertController class - style .Alert
             
-            let firstTextField = alertController.textFields![0] as UITextField
-            let secondTextField = alertController.textFields![1] as UITextField
+            let alert = UIAlertController(title: "Add Name",
+                                          message: "Add a new name", preferredStyle: .Alert)
             
-            if let name = firstTextField.text {
-                self.cityName = name
-                print("check name")
-            }
-            
-            if let code = secondTextField.text {
-                self.zipCode = code
-                print("check code")
-            }
-            
-            // call geocode
-            self.geocoding(self.zipCode, completion: {(latitude, longitude) in
-            
-            
-                
-                
-                
+
+            let saveAction = UIAlertAction(title: "Save",
+                                           style: .Default,
+                                           handler: {
+                                            (action) in
+                                            
+                                            self.currentCity = City()
+                                            
+                                            if let textField = alert.textFields?.first {
+                                                
+                                                if let name = textField.text {
+                                                    print(name)
+                                                    self.currentCity?.name = name
+                                                }
+                                            }
+                                            
+                                            if let zipTextField = alert.textFields?[1] {
+                                                
+                                                if let zipcode = zipTextField.text {
+                                                    print(zipcode)
+                                                    
+                                                    self.currentCity?.zipcode = zipcode
+                                                    
+                                                    // Start Geocoding Process
+                                                    self.geocoding(zipcode, completion: {
+                                                        (latitude, longitude) in
+                                                        
+                                                        print(latitude)
+                                                        print(longitude)
+                                                        
+                                                        self.currentCity?.latitude = latitude
+                                                        self.currentCity?.longitude = longitude
+                                                        
+                                                        if let current = self.currentCity {
+                                                            self.citiesArray.append(current)
+                                                        }
+                                                        
+                                                    })
+                                                
+                                                }
+                                                
+                                            }
             })
+
+            // Add the action to the alert instance
+            alert.addAction(saveAction)
             
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
-            (action : UIAlertAction!) -> Void in
-        })
-        
-        alertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter City Name"
-        }
-        alertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter Zipcode"
-        }
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+            // Create an action called Cancel
+            
+            let cancelAction = UIAlertAction(title: "Cancel",
+                                             style: .Default) {
+                                                (action) in
+            }
+            
+            // Add the cancel action
+            alert.addAction(cancelAction)
+            
+            
+            // Add a textfield to the AlertController
+            
+            alert.addTextFieldWithConfigurationHandler {
+                (textField) in
+                
+                // configure the placeholder text
+                textField.placeholder = "City Name"
+            }
+            
+            // Add a textfield to the AlertController
+            
+            alert.addTextFieldWithConfigurationHandler {
+                (textField) in
+                
+                // configure the placeholder text
+                textField.placeholder = "Zipcode"
+            }
+
+            
+            // Present the alert using presentViewController
+            self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -92,6 +132,8 @@ class CitiesTableViewController: UITableViewController {
     }
     
     func geocoding(location: String, completion: (Double, Double) -> ()) {
+        
+        
         CLGeocoder().geocodeAddressString(location) {
             
             (placemarks, error) in

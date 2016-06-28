@@ -17,12 +17,6 @@ class City: NSObject {
     
     override init() {
         super.init()
-        
-        self.name = ""
-        self.zipcode = ""
-        self.latitude = 0.0
-        self.longitude  = 0.0
-        
     }
-
+    
 }

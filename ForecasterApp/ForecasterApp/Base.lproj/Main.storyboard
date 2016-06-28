@@ -57,7 +57,7 @@
                     <navigationItem key="navigationItem" id="AQa-Sf-LrX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BYB-Ob-GLL">
                             <connections>
-                                <action selector="addButtonTapped:" destination="7N0-8O-y1h" id="U00-Yc-jRh"/>
+                                <action selector="addButtonTapped:" destination="7N0-8O-y1h" id="TkR-v3-hfQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
