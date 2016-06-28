@@ -61,9 +61,17 @@ class CitiesTableViewController: UITableViewController {
                                                         self.currentCity?.latitude = latitude
                                                         self.currentCity?.longitude = longitude
                                                         
+                                                        
                                                         if let current = self.currentCity {
-                                                            self.citiesArray.append(current)
+                                                            
+                                                            dispatch_async(dispatch_get_main_queue(), {
+                                                                self.citiesArray.append(current)
+                                                                self.tableView.reloadData()
+                                                            })
+                                                            
+                                                            
                                                         }
+                                                        
                                                         
                                                     })
                                                 
