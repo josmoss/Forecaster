@@ -80,10 +80,55 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="cRb-9d-S6f" kind="show" identifier="WeatherSegue" id="cbH-d0-ctF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lH9-rK-0Rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1051" y="239"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="8h3-Yo-17M">
+            <objects>
+                <viewController id="cRb-9d-S6f" customClass="WeatherViewController" customModule="ForecasterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OTt-dV-wTT"/>
+                        <viewControllerLayoutGuide type="bottom" id="lUr-zO-dYF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gr1-ra-Dnh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgG-Gh-FYA">
+                                <rect key="frame" x="10" y="104" width="580" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-sY-Bhs">
+                                <rect key="frame" x="10" y="175" width="580" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="leading" secondItem="gr1-ra-Dnh" secondAttribute="leading" constant="10" id="1CH-pe-wBA"/>
+                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="top" secondItem="LgG-Gh-FYA" secondAttribute="bottom" constant="50" id="25u-GJ-30d"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="leading" secondItem="gr1-ra-Dnh" secondAttribute="leading" constant="10" id="78F-0o-JP0"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="top" secondItem="OTt-dV-wTT" secondAttribute="bottom" constant="40" id="I2Y-X8-bCf"/>
+                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="SLO-Rz-0ec"/>
+                            <constraint firstAttribute="trailing" secondItem="Ydi-sY-Bhs" secondAttribute="trailing" constant="10" id="efr-gD-aSg"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="hrW-Jy-dAS"/>
+                            <constraint firstAttribute="trailing" secondItem="LgG-Gh-FYA" secondAttribute="trailing" constant="10" id="lY5-u0-YeC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5j-IJ-KeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zrb-7g-EeO">

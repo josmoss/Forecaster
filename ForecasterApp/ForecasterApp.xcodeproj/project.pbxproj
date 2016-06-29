@@ -14,6 +14,7 @@
 		D887B5291D2301F300366BE6 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887B5281D2301F300366BE6 /* CitiesTableViewController.swift */; };
 		D887B52B1D23031800366BE6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887B52A1D23031800366BE6 /* City.swift */; };
 		D887B5301D230E7A00366BE6 /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887B52F1D230E7A00366BE6 /* CitiesTableViewCell.swift */; };
+		D8D6F6961D24689600C244C4 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F6951D24689600C244C4 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D887B5281D2301F300366BE6 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		D887B52A1D23031800366BE6 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		D887B52F1D230E7A00366BE6 /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
+		D8D6F6951D24689600C244C4 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D887B5281D2301F300366BE6 /* CitiesTableViewController.swift */,
+				D8D6F6951D24689600C244C4 /* WeatherViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D887B5301D230E7A00366BE6 /* CitiesTableViewCell.swift in Sources */,
+				D8D6F6961D24689600C244C4 /* WeatherViewController.swift in Sources */,
 				D887B5291D2301F300366BE6 /* CitiesTableViewController.swift in Sources */,
 				D887B5171D23019000366BE6 /* AppDelegate.swift in Sources */,
 				D887B52B1D23031800366BE6 /* City.swift in Sources */,
@@ -318,6 +322,7 @@
 				D887B5271D23019000366BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
