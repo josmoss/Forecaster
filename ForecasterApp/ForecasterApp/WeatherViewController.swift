@@ -9,17 +9,21 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    var theCity : City?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-
-    }
-
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let city = self.theCity {
+            
+            self.cityLabel.text = city.name
+        }
         
     }
+
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
 
 
 }

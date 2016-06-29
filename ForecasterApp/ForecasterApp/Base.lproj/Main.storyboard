@@ -125,6 +125,10 @@
                             <constraint firstAttribute="trailing" secondItem="LgG-Gh-FYA" secondAttribute="trailing" constant="10" id="lY5-u0-YeC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="LgG-Gh-FYA" id="933-ut-UvD"/>
+                        <outlet property="temperatureLabel" destination="Ydi-sY-Bhs" id="lFa-9L-2sV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5j-IJ-KeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

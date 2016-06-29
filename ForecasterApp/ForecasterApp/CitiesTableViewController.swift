@@ -136,7 +136,24 @@ class CitiesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.currentCity = self.citiesArray[indexPath.row]
+        
+        performSegueWithIdentifier("WeatherSegue", sender: nil)
     
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "WeatherSegue" {
+            
+            if let controller = segue.destinationViewController as? WeatherViewController {
+                
+                controller.theCity = self.currentCity
+            } else {
+                print("Not the correct segue")
+            }
+        }
+        
     }
     
     func geocoding(location: String, completion: (Double, Double) -> ()) {
