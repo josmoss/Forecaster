@@ -11,6 +11,8 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     var theCity : City?
+    
+    let apiController = WeatherAPIController ()
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,6 +21,10 @@ class WeatherViewController: UIViewController {
             
             self.cityLabel.text = city.name
         }
+        
+        let latlong = "\(theCity?.latitude)" + "," + "\(theCity?.longitude)"
+        
+        apiController.fetchWeather(latlong)
         
     }
 
