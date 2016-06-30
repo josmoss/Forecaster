@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherAPIController: NSObject {
     
+    weak var delegate: WeatherDelegate?
+    
     let session = NSURLSession.sharedSession()
     
     func fetchWeather(latlong: String) {
@@ -42,13 +44,15 @@ class WeatherAPIController: NSObject {
                                     
                                 let w = Weather(dict: currentlyDict)
                                 
-                                    print(w.summary)
-                                    print(w.icon)
-                                    print(w.precipProbability)
-                                    print(w.temperature)
-                                    print(w.humidity)
-                                    print(w.windSpeed)
-                                        
+                                self.delegate?.passWeather(w)
+                                
+//                                    print(w.summary)
+//                                    print(w.icon)
+//                                    print(w.precipProbability)
+//                                    print(w.temperature)
+//                                    print(w.humidity)
+//                                    print(w.windSpeed)
+                                
                                 } else {
                                     print("Invalid location")
                                 }

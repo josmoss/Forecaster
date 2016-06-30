@@ -8,3 +8,5 @@
 
 typealias JSONDictionary = [String:AnyObject]
 typealias JSONArray = [JSONDictionary]
+
+let kWE_HAVE_THE_WEATHER = "kWE_HAVE_THE_WEATHER"

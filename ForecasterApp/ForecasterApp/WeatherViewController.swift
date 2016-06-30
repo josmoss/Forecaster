@@ -8,11 +8,33 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+protocol WeatherDelegate : class {
+    func passWeather(theWeather: Weather)
+}
+
+class WeatherViewController: UIViewController, WeatherDelegate {
     
     var theCity : City?
-    
+    var theWeather : Weather?
     let apiController = WeatherAPIController ()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.apiController.delegate = self
+    }
+    
+    func passWeather(theWeather: Weather) {
+        // implement the Weather user interface
+        
+//        print(theWeather.icon)
+//        print(theWeather.temperature)
+        
+        // Updating the UI
+        self.cityLabel.text = theCity?.name
+//        self.temperatureLabel.text = theWeather.temperature
+        
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
