@@ -15,7 +15,6 @@ protocol WeatherDelegate : class {
 class WeatherViewController: UIViewController, WeatherDelegate {
     
     var theCity : City?
-    var theWeather : Weather?
     let apiController = WeatherAPIController ()
     
     override func viewDidLoad() {
@@ -32,7 +31,11 @@ class WeatherViewController: UIViewController, WeatherDelegate {
         
         // Updating the UI
         self.cityLabel.text = theCity?.name
-//        self.temperatureLabel.text = theWeather.temperature
+        
+        let temp = Int(theWeather.temperature)
+        
+        self.temperatureLabel.text = "\(temp)"
+        self.humidityLabel.text = "\(theWeather.humidity)"
         
     }
 
@@ -52,6 +55,6 @@ class WeatherViewController: UIViewController, WeatherDelegate {
 
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-
+    @IBOutlet weak var humidityLabel: UILabel!
 
 }

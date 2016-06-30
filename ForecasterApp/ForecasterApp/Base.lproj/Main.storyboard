@@ -22,10 +22,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltm-gy-H3U">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltm-gy-H3U">
                                             <rect key="frame" x="28" y="44" width="462" height="24"/>
-                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="0.81568627449999997" green="0.95686274510000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accuweather-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mpD-pc-No1">
@@ -34,10 +34,10 @@
                                                 <constraint firstAttribute="width" constant="100" id="LNY-JN-baO"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-Sj-gbO">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-Sj-gbO">
                                             <rect key="frame" x="28" y="23" width="462" height="29"/>
-                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.81568627449999997" green="0.95686274510000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -61,7 +61,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.87058823529999996" alpha="0.19762931034482759" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.30588235289999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="9q8-Sj-gbO" id="ap5-9B-ld3"/>
                                     <outlet property="zipLabel" destination="ltm-gy-H3U" id="tEn-m1-m9U"/>
@@ -100,33 +100,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgG-Gh-FYA">
-                                <rect key="frame" x="10" y="104" width="580" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-sY-Bhs">
+                                <rect key="frame" x="265" y="247" width="71" height="105"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="90"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.95686274510000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-sY-Bhs">
-                                <rect key="frame" x="10" y="175" width="580" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvj-CB-rt6">
+                                <rect key="frame" x="0.0" y="-1341" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.95686274510000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgG-Gh-FYA">
+                                <rect key="frame" x="20" y="154" width="560" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.95686274510000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.30588235289999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="leading" secondItem="gr1-ra-Dnh" secondAttribute="leading" constant="10" id="1CH-pe-wBA"/>
-                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="top" secondItem="LgG-Gh-FYA" secondAttribute="bottom" constant="50" id="25u-GJ-30d"/>
-                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="leading" secondItem="gr1-ra-Dnh" secondAttribute="leading" constant="10" id="78F-0o-JP0"/>
-                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="top" secondItem="OTt-dV-wTT" secondAttribute="bottom" constant="40" id="I2Y-X8-bCf"/>
-                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="SLO-Rz-0ec"/>
-                            <constraint firstAttribute="trailing" secondItem="Ydi-sY-Bhs" secondAttribute="trailing" constant="10" id="efr-gD-aSg"/>
-                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="hrW-Jy-dAS"/>
-                            <constraint firstAttribute="trailing" secondItem="LgG-Gh-FYA" secondAttribute="trailing" constant="10" id="lY5-u0-YeC"/>
+                            <constraint firstAttribute="trailing" secondItem="LgG-Gh-FYA" secondAttribute="trailing" constant="20" id="6zC-mm-BVk"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="JwL-Sp-tQn"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="top" secondItem="OTt-dV-wTT" secondAttribute="bottom" constant="90" id="cMt-sJ-twu"/>
+                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="centerY" secondItem="gr1-ra-Dnh" secondAttribute="centerY" id="kFQ-yj-6nt"/>
+                            <constraint firstItem="Ydi-sY-Bhs" firstAttribute="centerX" secondItem="gr1-ra-Dnh" secondAttribute="centerX" id="klB-oM-pCH"/>
+                            <constraint firstItem="LgG-Gh-FYA" firstAttribute="leading" secondItem="gr1-ra-Dnh" secondAttribute="leading" constant="20" id="umY-OH-Y5s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="LgG-Gh-FYA" id="933-ut-UvD"/>
+                        <outlet property="humidityLabel" destination="Wvj-CB-rt6" id="8FB-gL-Qkq"/>
                         <outlet property="temperatureLabel" destination="Ydi-sY-Bhs" id="lFa-9L-2sV"/>
                     </connections>
                 </viewController>
