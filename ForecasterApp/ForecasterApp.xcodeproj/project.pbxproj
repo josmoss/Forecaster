@@ -18,6 +18,7 @@
 		D8D6F6981D2473EE00C244C4 /* WeatherAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F6971D2473EE00C244C4 /* WeatherAPIController.swift */; };
 		D8D6F69A1D247B9500C244C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F6991D247B9500C244C4 /* Constants.swift */; };
 		D8D6F69E1D247E5800C244C4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F69D1D247E5800C244C4 /* Weather.swift */; };
+		D8D6F6A21D24CB1C00C244C4 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F6A11D24CB1C00C244C4 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D8D6F6971D2473EE00C244C4 /* WeatherAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIController.swift; sourceTree = "<group>"; };
 		D8D6F6991D247B9500C244C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8D6F69D1D247E5800C244C4 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D8D6F6A11D24CB1C00C244C4 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				D887B5161D23019000366BE6 /* AppDelegate.swift */,
 				D8D6F6991D247B9500C244C4 /* Constants.swift */,
+				D8D6F6A11D24CB1C00C244C4 /* DataStore.swift */,
 				D887B52E1D230E3800366BE6 /* View */,
 				D887B52C1D23031E00366BE6 /* Model */,
 				D887B52D1D23033900366BE6 /* Controller */,
@@ -184,6 +187,7 @@
 				D887B5291D2301F300366BE6 /* CitiesTableViewController.swift in Sources */,
 				D8D6F69A1D247B9500C244C4 /* Constants.swift in Sources */,
 				D887B5171D23019000366BE6 /* AppDelegate.swift in Sources */,
+				D8D6F6A21D24CB1C00C244C4 /* DataStore.swift in Sources */,
 				D887B52B1D23031800366BE6 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

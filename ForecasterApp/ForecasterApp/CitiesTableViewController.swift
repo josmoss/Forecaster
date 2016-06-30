@@ -11,9 +11,8 @@ import CoreLocation
 
 class CitiesTableViewController: UITableViewController {
 
-    var citiesArray = [City]()
     var currentCity : City?
-    
+    var citiesArray = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,17 +118,17 @@ class CitiesTableViewController: UITableViewController {
     }
     
      override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.citiesArray.count
+        return DataStore.sharedInstance.numberOfCities()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CitiesTableViewCell
         
-        let cityName = self.citiesArray[indexPath.row]
+        let cityName = DataStore.sharedInstance.cityAtIndex(indexPath.row)
         
-        cell.nameLabel.text = cityName.name
-        cell.zipLabel.text = cityName.zipcode
+        cell.nameLabel.text = cityName?.name
+        cell.zipLabel.text = cityName?.zipcode
         
         return cell
         
