@@ -35,20 +35,26 @@ class WeatherAPIController: NSObject {
                     do {
                         // Root Level 1
                         if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary {
-                            print(jsonDictionary)
+                            //print(jsonDictionary)
                             
                             // Level 2
-                            if let itemsArray = jsonDictionary["items"] as? JSONArray {
-                                
-                                // Loop
-                                for itemDict in itemsArray {
+                            if let currentlyDict = jsonDictionary["currently"] as? JSONDictionary{
                                     
-                                }
+                                let w = Weather(dict: currentlyDict)
                                 
-                            }
-                        
+                                    print(w.summary)
+                                    print(w.icon)
+                                    print(w.precipProbability)
+                                    print(w.temperature)
+                                    print(w.humidity)
+                                    print(w.windSpeed)
+                                        
+                                } else {
+                                    print("Invalid location")
+                                }
+                            
                         }
-                        
+    
                     } catch {
                         print("I could not parse the jsonDictionary")
                     }
@@ -65,5 +71,4 @@ class WeatherAPIController: NSObject {
         }
         
     }
-
 }

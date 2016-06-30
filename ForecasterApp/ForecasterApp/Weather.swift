@@ -24,22 +24,42 @@ class Weather: NSObject {
     init(dict: JSONDictionary) {
         super.init()
         
-        if let currentlyDict = dict["currently"] as? JSONDictionary {
-        
-            if let summaryWeather = currentlyDict["summary"] as? String {
+            if let summaryWeather = dict["summary"] as? String {
                 self.summary = summaryWeather
             } else {
                 print("I could not parse the summary")
             }
             
-            if let iconName = currentlyDict["icon"] as? String {
+            if let iconName = dict["icon"] as? String {
                 self.icon = iconName
             } else {
                 print("I could not parse the icon")
             }
         
-        }
-        
+            if let precipProbability = dict["precipProbability"] as? Double {
+                self.precipProbability = precipProbability
+            } else {
+                print("I could not parse the precipProbablitiy")
+            }
+            
+            if let temperature = dict["temperature"] as? Double {
+                self.temperature = temperature
+            } else {
+                print("I could not parse the temperature")
+            }
+
+            if let humidity = dict["humidity"] as? Double {
+                self.humidity = humidity
+            } else {
+                print("I could not parse the summary")
+            }
+            
+            if let windSpeed = dict["windSpeed"] as? Double {
+                self.windSpeed = windSpeed
+            } else {
+                print("I could not parse the icon")
+            }
+
     }
 
 }

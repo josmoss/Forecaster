@@ -118,17 +118,17 @@ class CitiesTableViewController: UITableViewController {
     }
     
      override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataStore.sharedInstance.numberOfCities()
+        return self.citiesArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CitiesTableViewCell
         
-        let cityName = DataStore.sharedInstance.cityAtIndex(indexPath.row)
+        let cityName = self.citiesArray[indexPath.row]
         
-        cell.nameLabel.text = cityName?.name
-        cell.zipLabel.text = cityName?.zipcode
+        cell.nameLabel.text = cityName.name
+        cell.zipLabel.text = cityName.zipcode
         
         return cell
         
