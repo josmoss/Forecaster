@@ -20,11 +20,11 @@ class WeatherViewController: UIViewController {
         if let city = self.theCity {
             
             self.cityLabel.text = city.name
+        
+            let latlong = "\(city.latitude)" + "," + "\(city.longitude)"
+        
+            apiController.fetchWeather(latlong)
         }
-        
-        let latlong = "\(theCity?.latitude)" + "," + "\(theCity?.longitude)"
-        
-        apiController.fetchWeather(latlong)
         
     }
 

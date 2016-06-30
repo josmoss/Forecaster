@@ -16,7 +16,7 @@ class WeatherAPIController: NSObject {
         
         // 1. Load URLString for the API Call
         let urlString = "https://api.forecast.io/forecast/f8fd1bf1ef483fb79f068ceea4fef13c/\(latlong)"
-        print(urlString)
+        //print(urlString)
         
         if let url = NSURL(string: urlString) {
             
@@ -24,17 +24,28 @@ class WeatherAPIController: NSObject {
                 
                 (data, response, error) in
                 
+                // Step 1 of parsing JSON data
                 if error != nil {
                     print(error?.localizedDescription)
                     return
                 }
-                
+                // Step 2 parse the data
                 if let data = data {
                     
                     do {
-                        
+                        // Root Level 1
                         if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary {
                             print(jsonDictionary)
+                            
+                            // Level 2
+                            if let itemsArray = jsonDictionary["items"] as? JSONArray {
+                                
+                                // Loop
+                                for itemDict in itemsArray {
+                                    
+                                }
+                                
+                            }
                         
                         }
                         
