@@ -17,7 +17,6 @@ class CitiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
     @IBAction func addButtonTapped(sender: UIBarButtonItem) {

@@ -14,6 +14,12 @@ protocol WeatherDelegate : class {
 
 class WeatherViewController: UIViewController, WeatherDelegate {
     
+    @IBOutlet weak var currentImageView: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
     var theCity : City?
     let apiController = WeatherAPIController ()
     
@@ -24,18 +30,26 @@ class WeatherViewController: UIViewController, WeatherDelegate {
     }
     
     func passWeather(theWeather: Weather) {
-        // implement the Weather user interface
+//      implement the Weather user interface
+
+//      print(theWeather.icon)
+//      print(theWeather.temperature)
         
-//        print(theWeather.icon)
-//        print(theWeather.temperature)
+        dispatch_async(dispatch_get_main_queue(), {
         
         // Updating the UI
-        self.cityLabel.text = theCity?.name
+        self.cityLabel.text = self.theCity?.name
         
         let temp = Int(theWeather.temperature)
         
         self.temperatureLabel.text = "\(temp)"
         self.humidityLabel.text = "\(theWeather.humidity)"
+        self.summaryLabel.text = "\(theWeather.summary)"
+        
+        self.currentImageView.image = UIImage(named: theWeather.icon)
+        print(theWeather.icon)
+        
+        })
         
     }
 
@@ -52,9 +66,5 @@ class WeatherViewController: UIViewController, WeatherDelegate {
         }
         
     }
-
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
 
 }

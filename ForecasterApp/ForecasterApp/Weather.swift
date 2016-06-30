@@ -30,8 +30,8 @@ class Weather: NSObject {
                 print("I could not parse the summary")
             }
             
-            if let iconName = dict["icon"] as? String {
-                self.icon = iconName
+            if let icon = dict["icon"] as? String {
+                self.icon = icon
             } else {
                 print("I could not parse the icon")
             }
