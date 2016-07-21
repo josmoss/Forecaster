@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+let kCITIES = "kCITIES"
+
 class CitiesTableViewController: UITableViewController {
 
     var currentCity : City?
@@ -16,6 +18,8 @@ class CitiesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadDefaults()
         
     }
     
@@ -64,6 +68,7 @@ class CitiesTableViewController: UITableViewController {
                                                             
                                                             dispatch_async(dispatch_get_main_queue(), {
                                                                 self.citiesArray.append(current)
+                                                                self.saveDefaults()
                                                                 self.tableView.reloadData()
                                                             })
                                                             
@@ -150,6 +155,32 @@ class CitiesTableViewController: UITableViewController {
             } else {
                 print("Not the correct segue")
             }
+        }
+        
+    }
+    
+    func saveDefaults() {
+        
+        let data = NSKeyedArchiver.archivedDataWithRootObject(self.citiesArray)
+        
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: kCITIES)
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func loadDefaults() {
+        
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey(kCITIES) as? NSData {
+            
+            if let arrayOfCities = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [City] {
+                
+                self.citiesArray = arrayOfCities
+                self.tableView.reloadData()
+            }
+            
+        } else {
+            
+            print("no items saved")
         }
         
     }

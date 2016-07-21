@@ -41,6 +41,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.039215686274509803" green="0.30588235294117649" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="ltm-gy-H3U" secondAttribute="bottom" constant="16" id="66c-fA-wI6"/>
                                         <constraint firstItem="mpD-pc-No1" firstAttribute="leading" secondItem="ltm-gy-H3U" secondAttribute="trailing" constant="5" id="7GB-gJ-YQf"/>
@@ -195,6 +196,6 @@
     </scenes>
     <resources>
         <image name="accuweather-icon" width="150" height="150"/>
-        <image name="sun_sky" width="2160" height="1920"/>
+        <image name="sun_sky" width="1080" height="960"/>
     </resources>
 </document>
