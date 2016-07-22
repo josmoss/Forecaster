@@ -121,8 +121,22 @@ class CitiesTableViewController: UITableViewController {
         
     }
     
-     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: UITableViewDelegate Methods
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.citiesArray.count
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.citiesArray.removeAtIndex(indexPath.row)
+            
+            self.tableView.reloadData()
+            self.saveDefaults()
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -146,15 +160,19 @@ class CitiesTableViewController: UITableViewController {
     
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "WeatherSegue" {
             
             if let controller = segue.destinationViewController as? WeatherViewController {
                 
                 controller.theCity = self.currentCity
+                
             } else {
                 print("Not the correct segue")
             }
+            
         }
         
     }
